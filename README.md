@@ -1,2 +1,0 @@
-# Test_task_login_react
-Test_task_login_react
