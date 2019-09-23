@@ -111,10 +111,10 @@ class App extends PureComponent {
   render() {
     return (
       <div className="app">
-        <div className="header">
+        <header className="header">
           <img className="logo-mercdev" src={mercdev} alt="mercdev" />
-        </div>
-        <div className="main">
+        </header>
+        <main className="main">
           <Login
             isActive={this.state.isActive}
             onClick={this.handleClick}
@@ -131,8 +131,8 @@ class App extends PureComponent {
             userName={this.state.userName}
             userAvatar={this.state.userAvatar}
           />
-        </div>
-        <div className="footer" />
+        </main>
+        <footer className="footer" />
       </div>
     );
   }

@@ -1,18 +1,18 @@
 import React, { PureComponent } from "react";
 import Button from "./../buton.component/button.component";
 import ErrorNotification from "./../errorNotification.component/errorNotification.component";
-import "./login.style.css"
+import "./login.style.css";
 
 class Login extends PureComponent {
   render() {
     if (!this.props.isActive) {
       return null;
     }
-    let formClassNameEmpty = "form",
-      formClassNameMod = " form_error",
+    let formClassNameEmpty = "form-login",
+      formClassNameMod = " form-login_error",
       formClassName = formClassNameEmpty,
-      emailClassNameEmpty = "form__input",
-      emailClassNameMod = " form__input_email_error",
+      emailClassNameEmpty = "form-login__input",
+      emailClassNameMod = " form-login__input_email-error",
       emailClassName = emailClassNameEmpty;
     if (this.props.checkError) {
       formClassName = formClassNameEmpty + formClassNameMod;
@@ -23,7 +23,7 @@ class Login extends PureComponent {
     }
     return (
       <form className={formClassName} onSubmit={this.props.onClick}>
-        <div className="form__form-name">Log In</div>
+        <div className="form-login__form-name">Log In</div>
         <input
           className={emailClassName}
           id="email"
@@ -36,7 +36,7 @@ class Login extends PureComponent {
           autoFocus
         />
         <input
-          className="form__input form__input_password"
+          className="form-login__input form-login__input_password"
           id="password"
           type="password"
           placeholder="Password"

@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import Button from "./../buton.component/button.component";
-import "./logout.style.css"
+import "./logout.style.css";
 
 class Logout extends PureComponent {
   render() {
@@ -8,13 +8,13 @@ class Logout extends PureComponent {
       return null;
     }
     return (
-      <form className="form form_logout">
+      <form className="form-logout">
         <img
-          className="form__user-avatar"
+          className="form-logout__user-avatar"
           src={this.props.userAvatar}
           alt={this.props.userName}
         />
-        <div className="form__username">{this.props.userName}</div>
+        <div className="form-logout__username">{this.props.userName}</div>
         <Button isActive={this.props.isActive} onClick={this.props.onClick} />
       </form>
     );
