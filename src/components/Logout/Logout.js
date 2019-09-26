@@ -15,7 +15,11 @@ class Logout extends PureComponent {
           alt={this.props.userName}
         />
         <div className="form-logout__username">{this.props.userName}</div>
-        <Button isActive={this.props.isActive} onClick={this.props.onClick} />
+        <Button
+          onClick={this.props.onClick}
+          value="Logout"
+          modificator="logout"
+        />
       </form>
     );
   }
