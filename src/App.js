@@ -2,110 +2,34 @@ import React, { PureComponent } from "react";
 import mercdev from "./img/mercdev.svg";
 import "./App.css";
 import Login from "./components/Login/Login";
-import Logout from "./components/Logout/Logout";
+import UserPage from "./components/UserPage/UserPage";
 
 class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       isActive: true,
-      valueEmail: "",
-      valuePassword: "",
       userName: "",
-      userAvatar: "",
-      textError: "",
-      checkError: false
+      userAvatar: ""
     };
-    this.handleChangeEmail = this.handleChangeEmail.bind(this);
-    this.handleChangePassword = this.handleChangePassword.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.giveUserData = this.giveUserData.bind(this);
+    this.clearUserData = this.clearUserData.bind(this);
   }
 
-  handleClick() {
-    if (this.state.isActive) {
-      this.isValid();
-    } else if (!this.state.isActive) {
-      this.showLogin();
-    }
-  }
-
-  isValid() {
-    let email = this.state.valueEmail,
-      password = this.state.valuePassword,
-      validation = /^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/;
-    if (email === "" || password === "") {
-      this.addErrorNotification("E-Mail or password is not entered");
-    } else if (!validation.test(email)) {
-      this.addErrorNotification("E-Mail doesn't match format");
-      // onChangeEmailInput(email);
-      // onChangePasswordInput(password);
-    } else {
-      this.requestUser(email, password);
-    }
-  }
-
-  requestUser(email, password) {
-    const self = this;
-    let myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    fetch("https://us-central1-mercdev-academy.cloudfunctions.net/login", {
-      method: "POST",
-      headers: myHeaders,
-      mode: "cors",
-      cache: "force-cache",
-      body: JSON.stringify({
-        email: email,
-        password: password,
-        credentials: "include"
-      })
-    }).then(function(response) {
-      if (!response.ok) {
-        console.log("Error");
-        self.addErrorNotification("E-Mail or password is incorrect");
-        // onChangeEmailInput(email);
-        // onChangePasswordInput(password);
-      } else {
-        response.json().then(function(data) {
-          self.showLogout(data["name"], data["photoUrl"]);
-        });
-      }
+  giveUserData(name, photoUrl) {
+    this.setState({
+      isActive: !this.state.isActive,
+      userName: name,
+      userAvatar: photoUrl
     });
   }
 
-  showLogin() {
+  clearUserData() {
     this.setState({
       isActive: !this.state.isActive,
       userName: "",
       userAvatar: ""
     });
-  }
-
-  showLogout(name, photoUrl) {
-    this.setState({
-      isActive: !this.state.isActive,
-      userName: name,
-      userAvatar: photoUrl,
-      valueEmail: "",
-      valuePassword: "",
-      checkError: false,
-      textError: ""
-    });
-  }
-
-  addErrorNotification(textError) {
-    this.setState({
-      textError: textError,
-      checkError: true,
-      valuePassword: ""
-    });
-  }
-
-  handleChangeEmail(event) {
-    this.setState({ valueEmail: event.target.value });
-  }
-
-  handleChangePassword(event) {
-    this.setState({ valuePassword: event.target.value });
   }
 
   render() {
@@ -117,19 +41,15 @@ class App extends PureComponent {
         <main className="main">
           <Login
             isActive={this.state.isActive}
-            onClick={this.handleClick}
-            valueEmail={this.state.valueEmail}
-            valuePassword={this.state.valuePassword}
-            onChangeEmail={this.handleChangeEmail}
-            onChangePassword={this.handleChangePassword}
-            textError={this.state.textError}
-            checkError={this.state.checkError}
-          />
-          <Logout
-            isActive={this.state.isActive}
-            onClick={this.handleClick}
             userName={this.state.userName}
             userAvatar={this.state.userAvatar}
+            giveUserData={this.giveUserData}
+          />
+          <UserPage
+            isActive={this.state.isActive}
+            userName={this.state.userName}
+            userAvatar={this.state.userAvatar}
+            clearUserData={this.clearUserData}
           />
         </main>
         <footer className="footer" />
