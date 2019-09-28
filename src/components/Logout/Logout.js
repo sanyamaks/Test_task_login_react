@@ -18,7 +18,6 @@ class Logout extends PureComponent {
         <Button
           onClick={this.props.onClick}
           value="Logout"
-          modificator="logout"
         />
       </form>
     );

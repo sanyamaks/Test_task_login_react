@@ -4,9 +4,10 @@ import "./Button.css";
 class Button extends PureComponent {
   render() {
     let buttonClassName = "button";
-    if (this.props.modificator !== undefined) {
-      let modificator = " button_" + this.props.modificator;
-      buttonClassName += modificator;
+    if (this.props.value === "Login") {
+      buttonClassName += " button_login";
+    } else if (this.props.value === "Logout"){
+      buttonClassName += " button_logout";
     }
     return (
       <input

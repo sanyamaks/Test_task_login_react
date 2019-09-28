@@ -50,7 +50,6 @@ class Login extends PureComponent {
         <Button
           onClick={this.props.onClick}
           value="Login"
-          modificator="login"
         />
       </form>
     );

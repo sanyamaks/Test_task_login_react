@@ -16,7 +16,6 @@
   outline: none;
   box-shadow: 0 4px 16px 0 rgba(237, 65, 89, 0.4);
   background-color: rgba(237, 65, 89, 1);
-  margin-bottom: 60px;
 }
 
 .button:hover {
@@ -30,17 +29,18 @@
 
 .button_login {
   margin-top: 48px;
+  margin-bottom: 60px;
 }
 
 .button_logout {
   width: 154px;
   margin-top: 56px;
+  margin-bottom: 60px;
 }
 
 @media screen and (max-width: 768px) {
   .button {
     width: 145px;
-    margin-bottom: 48px;
   }
 
   .button_login {
