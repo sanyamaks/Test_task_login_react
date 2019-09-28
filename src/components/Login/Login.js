@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
-import Button from "../buton.component/button.component";
-import ErrorNotification from "../errorNotification.component/errorNotification.component";
-import "./login.style.css";
+import Button from "../Buton/Button";
+import ErrorNotification from "../ErrorNotification/ErrorNotification";
+import "./Login.css";
 
 class Login extends PureComponent {
   render() {

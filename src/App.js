@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
 import mercdev from "./img/mercdev.svg";
 import "./App.css";
-import Login from "./components/login.component/login.component";
-import Logout from "./components/logout.component/logout.component";
+import Login from "./components/Login/Login";
+import Logout from "./components/Logout/Logout";
 
 class App extends PureComponent {
   constructor(props) {

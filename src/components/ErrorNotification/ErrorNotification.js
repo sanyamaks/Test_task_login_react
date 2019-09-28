@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import "./errorNotification.style.css";
+import "./ErrorNotification.css";
 
 class ErrorNotification extends PureComponent {
   render() {
