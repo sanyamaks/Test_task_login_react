@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import Button from "./../buton.component/button.component";
+import Button from "../buton.component/button.component";
 import "./logout.style.css";
 
 class Logout extends PureComponent {
