@@ -50,6 +50,7 @@ class Login extends PureComponent {
         <Button
           onClick={this.props.onClick}
           value="Login"
+          className="form-login__button"
         />
       </form>
     );

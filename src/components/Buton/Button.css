@@ -27,27 +27,8 @@
   box-shadow: 0 2px 10px 0 rgba(237, 65, 89, 0.5);
 }
 
-.button_login {
-  margin-top: 48px;
-  margin-bottom: 60px;
-}
-
-.button_logout {
-  width: 154px;
-  margin-top: 56px;
-  margin-bottom: 60px;
-}
-
 @media screen and (max-width: 768px) {
   .button {
     width: 145px;
-  }
-
-  .button_login {
-    margin-top: 40px;
-  }
-
-  .button_logout {
-    margin-top: 40px;
   }
 }
