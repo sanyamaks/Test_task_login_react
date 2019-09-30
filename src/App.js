@@ -41,8 +41,6 @@ class App extends PureComponent {
         <main className="main">
           <Login
             isActive={this.state.isActive}
-            userName={this.state.userName}
-            userAvatar={this.state.userAvatar}
             giveUserData={this.giveUserData}
           />
           <UserPage
