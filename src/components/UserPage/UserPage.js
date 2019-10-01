@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import Button from "../Buton/Button";
+import Button from "../Button/Button";
 import "./UserPage.css";
 
 class UserPage extends PureComponent {
@@ -27,7 +27,7 @@ class UserPage extends PureComponent {
         <Button
           onClick={this.handleClick}
           value="Logout"
-          modificator="logout"
+          className="user-page__button"
         />
       </form>
     );

@@ -128,7 +128,11 @@ class Login extends PureComponent {
           checkError={this.state.checkError}
           textError={this.state.textError}
         />
-        <Button onClick={this.handleClick} value="Login" modificator="login" />
+        <Button
+          onClick={this.handleClick}
+          value="Login"
+          className="form-login__button"
+        />
       </form>
     );
   }
