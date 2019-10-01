@@ -47,7 +47,11 @@ class Login extends PureComponent {
           checkError={this.props.checkError}
           textError={this.props.textError}
         />
-        <Button isActive={this.props.isActive} onClick={this.props.onClick} />
+        <Button
+          onClick={this.props.onClick}
+          value="Login"
+          className="form-login__button"
+        />
       </form>
     );
   }

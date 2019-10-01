@@ -1,28 +1,21 @@
 import React, { PureComponent } from "react";
-import "./Button.css"
+import "./Button.css";
 
 class Button extends PureComponent {
   render() {
-    if (this.props.isActive) {
-      return (
-        <input
-          type="submit"
-          className="form__button form__button_login"
-          value="Login"
-          onClick={this.props.onClick}
-          onSubmit={this.props.onClick}
-        />
-      );
-    } else if (!this.props.isActive) {
-      return (
-        <input
-          type="button"
-          className="form__button form__button_logout"
-          value="Logout"
-          onClick={this.props.onClick}
-        />
-      );
+    let className = "button";
+    if (isNaN(this.props.className)) {
+      className += " " + this.props.className;
     }
+    return (
+      <input
+        type="submit"
+        className={className}
+        value={this.props.value}
+        onClick={this.props.onClick}
+        onSubmit={this.props.onClick}
+      />
+    );
   }
 }
 
