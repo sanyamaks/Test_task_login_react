@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import Button from "../Buton/Button";
+import Button from "../Button/Button";
 import ErrorNotification from "../ErrorNotification/ErrorNotification";
 import "./Login.css";
 
@@ -89,18 +89,13 @@ class Login extends PureComponent {
     if (!this.props.isActive) {
       return null;
     }
-    let formClassNameEmpty = "form-login",
+    let formClassName = "form-login",
       formClassNameMod = " form-login_error",
-      formClassName = formClassNameEmpty,
-      emailClassNameEmpty = "form-login__input",
-      emailClassNameMod = " form-login__input_email-error",
-      emailClassName = emailClassNameEmpty;
+      emailClassName = "form-login__input",
+      emailClassNameMod = " form-login__input_email-error";
     if (this.state.checkError) {
-      formClassName = formClassNameEmpty + formClassNameMod;
-      emailClassName = emailClassNameEmpty + emailClassNameMod;
-    } else {
-      formClassName = formClassNameEmpty;
-      emailClassName = emailClassNameEmpty;
+      formClassName += formClassNameMod;
+      emailClassName += emailClassNameMod;
     }
     return (
       <form className={formClassName} onSubmit={this.handleClick}>
