@@ -33,36 +33,11 @@
   color: rgba(38, 38, 38, 0.8);
 }
 
-.form-login__input {
-  width: 488px;
-  height: 48px;
-  min-height: 48px;
-  max-height: 48px;
-  font-family: Gotham, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: rgba(0, 0, 0, 0.8);
-  border: none;
-  outline: none;
-  background: #f1f1f1;
-  border-radius: 4px;
-  padding: 0 0 0 16px;
-}
-
-.form-login__input::placeholder {
-  color: rgba(0, 0, 0, 0.4);
-  font-weight: bold;
-}
-
-.form-login__input_email-error {
+.form-login__input-field-email-error {
   color: rgb(237, 65, 89);
 }
 
-.form-login__input_password {
+.form-login__input-field-password {
   margin-top: 32px;
 }
 
@@ -90,11 +65,7 @@
     font-weight: 800;
   }
 
-  .form-login__input {
-    width: 224px;
-  }
-
-  .form-login__input_password {
+  .form-login__input-field-password {
     margin-top: 24px;
   }
 

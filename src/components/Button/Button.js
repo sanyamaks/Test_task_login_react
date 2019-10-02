@@ -4,7 +4,7 @@ import "./Button.css";
 class Button extends PureComponent {
   render() {
     let className = "button";
-    if (isNaN(this.props.className)) {
+    if (this.props.className !== undefined && this.props.className !== null) {
       className += " " + this.props.className;
     }
     return (

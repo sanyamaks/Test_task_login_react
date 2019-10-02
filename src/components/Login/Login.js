@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import Button from "../Button/Button";
 import ErrorNotification from "../ErrorNotification/ErrorNotification";
+import InputField from "../InputField/InputField";
 import "./Login.css";
 
 class Login extends PureComponent {
@@ -91,29 +92,26 @@ class Login extends PureComponent {
     }
     let formClassName = "form-login",
       formClassNameMod = " form-login_error",
-      emailClassName = "form-login__input",
-      emailClassNameMod = " form-login__input_email-error";
+      emailClassName = "";
     if (this.state.checkError) {
       formClassName += formClassNameMod;
-      emailClassName += emailClassNameMod;
+      emailClassName = "form-login__input-field-email-error";
     }
     return (
       <form className={formClassName} onSubmit={this.handleClick}>
         <div className="form-login__form-name">Log In</div>
-        <input
+        <InputField
           className={emailClassName}
-          id="email"
           type="email"
           placeholder="E-Mail"
           pattern="([a-z0-9_-]+@[a-z0-9-]+\\.[a-z]{2,6})"
           onChange={this.handleChangeEmail}
           value={this.state.valueEmail}
-          required
-          autoFocus
+          required={true}
+          autoFocus={true}
         />
-        <input
-          className="form-login__input form-login__input_password"
-          id="password"
+        <InputField
+          className="form-login__input-field-password"
           type="password"
           placeholder="Password"
           onChange={this.handleChangePassword}
