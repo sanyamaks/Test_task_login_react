@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://sanyamaks.github.io/test_task_login_react/",
   "dependencies": {
+    "classnames": "^2.2.6",
     "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

@@ -26,18 +26,21 @@
   font-family: Gotham, sans-serif;
   font-size: 24px;
   font-weight: 800;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
   text-align: center;
   color: rgba(38, 38, 38, 0.8);
 }
 
-.form-login__input-field-email-error {
+.form-login__input-field-email {
+  width: 488px;
+}
+
+.form-login__input-field-error {
   color: rgb(237, 65, 89);
+  border: solid 1px rgb(237, 65, 89);
 }
 
 .form-login__input-field-password {
+  width: 488px;
   margin-top: 32px;
 }
 
@@ -64,8 +67,12 @@
     font-size: 20px;
     font-weight: 800;
   }
+  .form-login__input-field-email {
+    width: 224px;
+  }
 
   .form-login__input-field-password {
+    width: 224px;
     margin-top: 24px;
   }
 

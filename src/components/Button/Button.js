@@ -1,19 +1,17 @@
 import React, { PureComponent } from "react";
+import classNames from "classnames";
 import "./Button.css";
 
 class Button extends PureComponent {
   render() {
-    let className = "button";
-    if (this.props.className !== undefined && this.props.className !== null) {
-      className += " " + this.props.className;
-    }
+    let classNameParent = this.props.className;
     return (
-      <input
-        type="submit"
-        className={className}
-        value={this.props.value}
-        onClick={this.props.onClick}
-        onSubmit={this.props.onClick}
+      <button
+        {...this.props}
+        className={classNames("button", {
+          [classNameParent]:
+            this.props.className !== undefined && this.props.className !== null
+        })}
       />
     );
   }

@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import classNames from "classnames";
 import Button from "../Button/Button";
 import ErrorNotification from "../ErrorNotification/ErrorNotification";
 import InputField from "../InputField/InputField";
@@ -18,7 +19,8 @@ class Login extends PureComponent {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(event) {
+    event.preventDefault();
     this.isValid();
   }
 
@@ -90,24 +92,22 @@ class Login extends PureComponent {
     if (!this.props.isActive) {
       return null;
     }
-    let formClassName = "form-login",
-      formClassNameMod = " form-login_error",
-      emailClassName = "";
-    if (this.state.checkError) {
-      formClassName += formClassNameMod;
-      emailClassName = "form-login__input-field-email-error";
-    }
     return (
-      <form className={formClassName} onSubmit={this.handleClick}>
+      <form
+        className={classNames("form-login", {
+          "form-login_error": this.state.checkError
+        })}
+        onSubmit={this.handleClick}
+      >
         <div className="form-login__form-name">Log In</div>
         <InputField
-          className={emailClassName}
-          type="email"
+          className={classNames("form-login__input-field-email", {
+            "form-login__input-field-error": this.state.checkError
+          })}
+          type="text"
           placeholder="E-Mail"
-          pattern="([a-z0-9_-]+@[a-z0-9-]+\\.[a-z]{2,6})"
           onChange={this.handleChangeEmail}
           value={this.state.valueEmail}
-          required={true}
           autoFocus={true}
         />
         <InputField
@@ -121,11 +121,7 @@ class Login extends PureComponent {
           checkError={this.state.checkError}
           textError={this.state.textError}
         />
-        <Button
-          onClick={this.handleClick}
-          value="Login"
-          className="form-login__button"
-        />
+        <Button className="form-login__button">Login</Button>
       </form>
     );
   }

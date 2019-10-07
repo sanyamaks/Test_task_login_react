@@ -17,19 +17,17 @@ class UserPage extends PureComponent {
       return null;
     }
     return (
-      <form className="user-page">
+      <div className="user-page">
         <img
           className="user-page__user-avatar"
           src={this.props.userAvatar}
           alt={this.props.userName}
         />
         <div className="user-page__username">{this.props.userName}</div>
-        <Button
-          onClick={this.handleClick}
-          value="Logout"
-          className="user-page__button"
-        />
-      </form>
+        <Button onClick={this.handleClick} className="user-page__button">
+          Logout
+        </Button>
+      </div>
     );
   }
 }
