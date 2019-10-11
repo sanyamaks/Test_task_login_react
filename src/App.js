@@ -8,7 +8,7 @@ class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      isActive: true,
+      isLogin: false,
       userName: "",
       userAvatar: ""
     };
@@ -18,7 +18,7 @@ class App extends PureComponent {
 
   giveUserData(name, photoUrl) {
     this.setState({
-      isActive: !this.state.isActive,
+      isLogin: !this.state.isLogin,
       userName: name,
       userAvatar: photoUrl
     });
@@ -26,7 +26,7 @@ class App extends PureComponent {
 
   clearUserData() {
     this.setState({
-      isActive: !this.state.isActive,
+      isLogin: !this.state.isLogin,
       userName: "",
       userAvatar: ""
     });
@@ -40,11 +40,11 @@ class App extends PureComponent {
         </header>
         <main className="main">
           <Login
-            isActive={this.state.isActive}
+            isLogin={this.state.isLogin}
             giveUserData={this.giveUserData}
           />
           <UserPage
-            isActive={this.state.isActive}
+            isLogin={this.state.isLogin}
             userName={this.state.userName}
             userAvatar={this.state.userAvatar}
             clearUserData={this.clearUserData}

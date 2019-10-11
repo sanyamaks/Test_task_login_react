@@ -12,7 +12,7 @@ class Login extends PureComponent {
       valueEmail: "",
       valuePassword: "",
       textError: "",
-      checkError: false
+      invalid: false
     };
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
@@ -66,7 +66,7 @@ class Login extends PureComponent {
   addErrorNotification(textError) {
     this.setState({
       textError: textError,
-      checkError: true,
+      invalid: true,
       valuePassword: ""
     });
   }
@@ -83,32 +83,31 @@ class Login extends PureComponent {
     this.setState({
       valueEmail: "",
       valuePassword: "",
-      checkError: false,
+      invalid: false,
       textError: ""
     });
   }
 
   render() {
-    if (!this.props.isActive) {
+    if (this.props.isLogin) {
       return null;
     }
     return (
       <form
         className={classNames("form-login", {
-          "form-login_error": this.state.checkError
+          "form-login_error": this.state.invalid
         })}
         onSubmit={this.handleClick}
       >
         <div className="form-login__form-name">Log In</div>
         <InputField
-          className={classNames("form-login__input-field-email", {
-            "form-login__input-field-error": this.state.checkError
-          })}
+          className="form-login__input-field-email"
           type="text"
           placeholder="E-Mail"
           onChange={this.handleChangeEmail}
           value={this.state.valueEmail}
           autoFocus={true}
+          invalid={this.state.invalid}
         />
         <InputField
           className="form-login__input-field-password"
@@ -118,7 +117,7 @@ class Login extends PureComponent {
           value={this.state.valuePassword}
         />
         <ErrorNotification
-          checkError={this.state.checkError}
+          invalid={this.state.invalid}
           textError={this.state.textError}
         />
         <Button className="form-login__button">Login</Button>

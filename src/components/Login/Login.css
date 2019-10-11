@@ -34,11 +34,6 @@
   width: 488px;
 }
 
-.form-login__input-field-error {
-  color: rgb(237, 65, 89);
-  border: solid 1px rgb(237, 65, 89);
-}
-
 .form-login__input-field-password {
   width: 488px;
   margin-top: 32px;

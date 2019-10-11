@@ -13,7 +13,7 @@ class UserPage extends PureComponent {
   }
 
   render() {
-    if (this.props.isActive) {
+    if (!this.props.isLogin) {
       return null;
     }
     return (

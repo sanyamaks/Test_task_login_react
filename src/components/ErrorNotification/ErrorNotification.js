@@ -4,7 +4,7 @@ import "./ErrorNotification.css";
 class ErrorNotification extends PureComponent {
   render() {
     let textError = this.props.textError;
-    if (!this.props.checkError) {
+    if (!this.props.invalid) {
       return null;
     }
     return <div className="form__error">{textError}</div>;
