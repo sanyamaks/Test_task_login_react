@@ -7,7 +7,7 @@ class InputField extends PureComponent {
     return (
       <input
         {...this.props}
-        className={classNames("input-field", this.props.className, {"input-field_error": this.props.invalid})}
+        className={classNames("input-field", this.props.className, {"input-field_error": (this.props.invalid) })}
       />
     );
   }

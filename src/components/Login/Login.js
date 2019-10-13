@@ -12,7 +12,7 @@ class Login extends PureComponent {
       valueEmail: "",
       valuePassword: "",
       textError: "",
-      invalid: false
+      invalid: 0 //1 - true, 0 - false
     };
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
@@ -66,7 +66,7 @@ class Login extends PureComponent {
   addErrorNotification(textError) {
     this.setState({
       textError: textError,
-      invalid: true,
+      invalid: 1, //1 - true, 0 - false
       valuePassword: ""
     });
   }
@@ -83,7 +83,7 @@ class Login extends PureComponent {
     this.setState({
       valueEmail: "",
       valuePassword: "",
-      invalid: false,
+      invalid: 0, //1 - true, 0 - false
       textError: ""
     });
   }
@@ -107,7 +107,7 @@ class Login extends PureComponent {
           onChange={this.handleChangeEmail}
           value={this.state.valueEmail}
           autoFocus={true}
-          invalid={this.state.invalid}
+          invalid={this.state.invalid} //1 - true, 0 - false
         />
         <InputField
           className="form-login__input-field-password"
