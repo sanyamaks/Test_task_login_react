@@ -4,10 +4,13 @@ import "./InputField.css";
 
 class InputField extends PureComponent {
   render() {
+    const { invalid, className, ...otherProps } = this.props;
     return (
       <input
-        {...this.props}
-        className={classNames("input-field", this.props.className, {"input-field_error": (this.props.invalid) })}
+        {...otherProps}
+        className={classNames("input-field", className, {
+          "input-field_error": invalid
+        })}
       />
     );
   }
